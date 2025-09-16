@@ -1,28 +1,15 @@
-package com.phonebook.tests;
+package com.phonebook.models;
 
-public class Contact{
+public class Contact {
+    private String name;
+    private String lastName;
+    private String phone;
+    private String email;
+    private String address;
+    private String description;
+
     public String getName() {
         return name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public Contact setName(String name) {
@@ -30,9 +17,17 @@ public class Contact{
         return this;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
     public Contact setLastName(String lastName) {
         this.lastName = lastName;
         return this;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public Contact setPhone(String phone) {
@@ -40,9 +35,17 @@ public class Contact{
         return this;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public Contact setEmail(String email) {
         this.email = email;
         return this;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public Contact setAddress(String address) {
@@ -50,15 +53,12 @@ public class Contact{
         return this;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public Contact setDescription(String description) {
         this.description = description;
         return this;
     }
-
-    private String name;
-    private String lastName;
-    private String phone;
-    private String email;
-    private String address;
-    private String description;
 }

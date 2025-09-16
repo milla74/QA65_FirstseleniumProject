@@ -1,14 +1,12 @@
-package com.phonebook.tests;
+package com.phonebook.models;
 
 
 
 public class User {
-    public String getEmail() {
-        return email;
+    public String getEmail() {return email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassword() {return password;
     }
 
     public User setEmail(String email) {
@@ -21,7 +19,6 @@ public class User {
         return this;
     }
 
- private    String email;
-private String password;
+    private  String email;
+    private  String password;
 }
-

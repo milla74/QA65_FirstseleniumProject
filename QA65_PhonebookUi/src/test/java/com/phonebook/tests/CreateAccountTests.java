@@ -1,27 +1,46 @@
 package com.phonebook.tests;
 
+import com.phonebook.models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class CreateAccountTests extends TestBase {
 
-    @Test(enabled = false)
-    public void newUserRegistrationPositiveTest() {
+    SoftAssert softAssert = new SoftAssert();
 
-        //       int i = (int)((System.currentTimeMillis()/1000)%3600);
-        clickOnLoginLink();
-        fillRegisterLoginForm(new User().setEmail("test258phone$@gmail.com").setPassword("Nastya12#!"));
-        clickOnRegistretionButton();
-        Assert.assertTrue(isSignOutButtonPresent());//css div:nth-child(1) button
+    @BeforeMethod
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutButton();
+        }
     }
 
+            @Test(enabled = false)
+            public void newUserRegistrationPositiveTest () {
 
-    @Test()
-    public void existetUserRegistrationNegative() {
-        clickOnLoginLink();
-        fillRegisterLoginForm(new User().setEmail("test258phone$@gmail.com").setPassword("Nastya12#!"));
-        clickOnRegistretionButton();
-        Assert.assertTrue(isAlertDisplayed());
-    }
+                //int i =(int)((System.currentTimeMillis()/1000)%3600);
 
-}
+                app.getUser().clickOnLoginLink();
+                app.getUser().fillRegisterLoginForm(new User()
+                        .setEmail("test258phone$@gmail.com")
+                        .setPassword("Nastya12#!"));
+                app.getUser().clickOnRegistrationButton();
+                Assert.assertTrue(app.getUser().isSignOutButtonPresent());//css div:nth-child(1) button
+            }
+
+            @Test()
+            public void existedUserRegistrationNegativeTest () {
+
+                app.getUser().clickOnLoginLink();
+                app.getUser().fillRegisterLoginForm(new User().setEmail("test258phone$@gmail.com").setPassword("Nastya12#!"));
+                app.getUser().clickOnRegistrationButton();
+                softAssert.assertTrue(app.getUser().isAlertDisplayed());
+                softAssert.assertTrue(app.getUser().isErrorMessagePresent());
+                softAssert.assertAll();
+
+            }
+        }
+
+
