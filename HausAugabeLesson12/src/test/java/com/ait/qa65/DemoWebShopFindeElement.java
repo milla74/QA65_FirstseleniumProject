@@ -64,17 +64,17 @@ import java.time.Duration;
             driver.findElement(By.xpath("//a[normalize-space()='Log in']"));
             driver.findElement(By.xpath("//a[contains(text(),'Shopping cart')]"));
             driver.findElement(By.xpath("//a[contains(text(),'Wishlist')]"));
-            driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Books']"));
             driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Computers']"));
             driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Electronics']"));
             driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Apparel & Shoes']"));
             driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Digital downloads']"));
             driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Jewelry']"));
             driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Gift Cards']"));
+            driver.findElement(By.xpath("//ul[@class='top-menu']//a[text()='Books']"));
         }
 
 
-            }
+    }
 
 
 
