@@ -11,9 +11,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class MyLisetener implements WebDriverListener {
+public class MyListener implements WebDriverListener {
 
-    Logger logger = LoggerFactory.getLogger(MyLisetener.class);
+    Logger logger = LoggerFactory.getLogger(MyListener.class);
 
     @Override
     public void onError(Object target, Method method, Object[] args, InvocationTargetException e) {
