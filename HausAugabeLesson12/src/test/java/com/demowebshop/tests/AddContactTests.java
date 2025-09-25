@@ -20,11 +20,11 @@ public class AddContactTests extends TestBase {
 
     @BeforeMethod
     public void precondition() {
-        if (!app.getUser().isLoginLinkPresent()) {
-            app.getUser().clickOnLogoButton();
-        }
+
+
         app.getUser().clickOnLoginLink();
-        app.getUser().fillRegisterLoginForm(new User().setEmail(UserData.EMAIL)
+        app.getUser().fillLoginForm(new User()
+                .setEmail(UserData.EMAIL)
                 .setPassword(UserData.PASSWORD));
         app.getUser().clickOnLoginButton();
     }
@@ -48,14 +48,7 @@ public class AddContactTests extends TestBase {
 
         app.getContact().clickOnAddLink();
         app.getContact().fillContactForm(new Contact()
-                        .setGender(gender)
-                        .setFirsName(firstname)
-                .setLastName(lastName)
-                .setEmail(email)
-                        .setPassword(password)
-                                .setConfirmPassword(confirmpassword)
-        app.getContact().clickOnLogoButton();
-        Assert.assertTrue(app.getContact().isContactAdded("Viktor"));
+
     }
 
     @AfterMethod

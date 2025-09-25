@@ -42,14 +42,14 @@ import java.util.List;
             // Найти все ссылки на странице и вывести их количество
             List<WebElement> links = driver.findElements(By.tagName("a"));
            // System.out.println(elements.size());
-            System.out.println(element.size);
+
         }
 
         @Test
         public void sampleElementBySimpleLocators() {
             // По тексту ссылки (linkText / partialLinkText)
-            driver.findElement(By.partialLinkText("Register");
-            driver.findElement(By.linkText("Forgot password");
+            driver.findElement(By.partialLinkText("Register"));
+            driver.findElement(By.linkText("Forgot password"));
             // Если на странице есть id полей (обычно в nopCommerce используются id Email/Password)
             driver.findElement(By.id("Email"));
             driver.findElements(By.id("Password"));
